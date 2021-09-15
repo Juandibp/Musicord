@@ -1,0 +1,25 @@
+{
+  "name": "musicord",
+  "version": "1.0.0",
+  "description": "Self hosted Music bot, cause Fuck youtube",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Juandibp/Musicord.git"
+  },
+  "keywords": [
+    "Music-bot",
+    "music",
+    "discord",
+    "bot"
+  ],
+  "author": "Juandibp",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Juandibp/Musicord/issues"
+  },
+  "homepage": "https://github.com/Juandibp/Musicord#readme"
+}
