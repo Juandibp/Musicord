@@ -25,6 +25,7 @@
   "homepage": "https://github.com/Juandibp/Musicord#readme",
   "dependencies": {
     "@discordjs/builders": "^0.6.0",
+    "@discordjs/opus": "^0.5.3",
     "@discordjs/voice": "^0.6.0",
     "@distube/soundcloud": "^0.2.2",
     "@distube/spotify": "^0.6.3",
