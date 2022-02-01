@@ -3,7 +3,7 @@ const {
   Collection
 } = require("discord.js");
 const Discord = require("discord.js")
-const config = require("../botconfig/config.json");
+const config = require("../botconfig/config.js");
 const ee = require("../botconfig/embed.json");
 const settings = require("../botconfig/settings.json");
 //EXPORT ALL FUNCTIONS

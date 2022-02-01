@@ -1,10 +1,10 @@
 const {
   MessageEmbed
 } = require("discord.js");
-const config = require("../../botconfig/config.json");
+const config = require("../../botconfig/config.js");
 const ee = require("../../botconfig/embed.json");
 const settings = require("../../botconfig/settings.json");
-const websiteSettings = require("../../dashboard/settings.json");
+const websiteSettings = require("../../dashboard/settings.js");
 module.exports = {
   name: "help", //the command name for execution & for helpcmd [OPTIONAL]
   cooldown: 1, //the command cooldown for execution & for helpcmd [OPTIONAL]

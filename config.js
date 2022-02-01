@@ -1,0 +1,19 @@
+const dotenv = require('dotenv');
+
+dotenv.config();
+
+const {
+    BOT_TOKEN,
+    SPOTIFY_CLIENT_SECRET,
+    SPOTIFY_CLIENT_ID,
+    DISCORD_CLIENT_ID,
+    DISCORD_SECRET
+} = process.env;
+
+module.exports = {
+    BOT_TOKEN: BOT_TOKEN,
+    SPOTIFY_CLIENT_SECRET: SPOTIFY_CLIENT_SECRET,
+    SPOTIFY_CLIENT_ID: SPOTIFY_CLIENT_ID,
+    DISCORD_CLIENT_ID: DISCORD_CLIENT_ID,
+    DISCORD_SECRET: DISCORD_SECRET
+}

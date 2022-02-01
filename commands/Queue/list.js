@@ -3,7 +3,7 @@ const {
 	MessageSelectMenu,
 	MessageActionRow
 } = require("discord.js");
-const config = require("../../botconfig/config.json");
+const config = require("../../botconfig/config.js");
 const ee = require("../../botconfig/embed.json");
 const settings = require("../../botconfig/settings.json");
 const {

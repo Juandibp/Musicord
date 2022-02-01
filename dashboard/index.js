@@ -8,7 +8,7 @@ const fs = require("fs")
 const passport = require(`passport`);
 const bodyParser = require("body-parser");
 const Strategy = require(`passport-discord`).Strategy;
-const BotConfig = require("../botconfig/config.json");
+const BotConfig = require("../botconfig/config.js");
 const BotFilters = require("../botconfig/filters.json");
 const BotEmojis = require("../botconfig/emojis.json");
 const BotEmbed = require("../botconfig/embed.json");
@@ -19,8 +19,7 @@ const BotEmbed = require("../botconfig/embed.json");
  */
 module.exports = client => {
     //Start teh website
-    console.log("Loading DashBoard settings".brigthGreen)
-    const settings = require("./settings.json");
+    const settings = require("./settings");
     // We instantiate express app and the session store.
     const app = express();
     const httpApp = express();
@@ -83,7 +82,7 @@ module.exports = client => {
       req.session.backURL = req.url;
       res.redirect("/login");
     };
-
+  
     //Login endpoint
     app.get(`/login`, (req, res, next) => {
         if (req.session.backURL) {
@@ -113,7 +112,6 @@ module.exports = client => {
             res.redirect(`/dashboard`)
         }
     });
-
 
 
     //When the website is loaded on the main page, render the main page + with those variables
@@ -183,7 +181,6 @@ module.exports = client => {
           BotEmojis: BotEmojis,
         });
     })
-
     // Settings endpoint.
     app.get("/dashboard/:guildID", checkAuth, async (req, res) => {
       // We validate the request, check if guild exists, member is in guild and if member has minimum permissions, if not, we redirect it back.
@@ -210,7 +207,7 @@ module.exports = client => {
         botchannel: []
       })
 
-
+        
       // We render template using the absolute path of the template and the merged default data with the additional data provided.
       res.render("settings", {
           req: req,
@@ -229,11 +226,13 @@ module.exports = client => {
       );
     });
 
+  
 
     // Settings endpoint.
     app.post("/dashboard/:guildID", checkAuth, async (req, res) => {
       // We validate the request, check if guild exists, member is in guild and if member has minimum permissions, if not, we redirect it back.
       const guild = client.guilds.cache.get(req.params.guildID);
+      console.log(guild)
       if (!guild) return res.redirect("/dashboard?error=" + encodeURIComponent("Can't get Guild Information Data!"));
       let member = guild.members.cache.get(req.user.id);
       if (!member) {
@@ -253,7 +252,7 @@ module.exports = client => {
       if(req.body.defaultautoplay) client.settings.set(guild.id, true, "defaultautoplay")
       //otherwise not
       else client.settings.set(guild.id, false, "defaultautoplay")
-      
+
       //if there are new defaultfilters, set them
       if(req.body.defaultfilters) client.settings.set(guild.id, req.body.defaultfilters, "defaultfilters")
       if(req.body.djroles) client.settings.set(guild.id, req.body.djroles, "djroles")
@@ -296,7 +295,6 @@ module.exports = client => {
         BotEmojis: BotEmojis,
       });
     })
-
 
     //Queue Dashes
     app.get("/queuedashboard", checkAuth, async (req,res) => {

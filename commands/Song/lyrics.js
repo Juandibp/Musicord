@@ -5,7 +5,7 @@ const {
 const {
     KSoftClient
 } = require('@ksoft/api');
-const config = require(`../../botconfig/config.json`);
+const config = require(`../../botconfig/config.js`);
 const ksoft = new KSoftClient(config.ksoftapi);
 const ee = require("../../botconfig/embed.json");
 const settings = require("../../botconfig/settings.json");

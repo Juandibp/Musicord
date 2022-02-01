@@ -1,5 +1,5 @@
 const Discord = require("discord.js");
-const config = require('./botconfig/config.json');
+const config = require('./botconfig/config.js');
 const settings = require('./botconfig/settings.json');
 const filters = require('./botconfig/filters.json');
 const colors = require('colors');
@@ -67,6 +67,8 @@ client.distube = new DisTube(client,{
         format: "audioonly",
         liveBuffer: 60000,
         dlChunkSize: 1024*1024*64,
+        username: "juandibpcr@gmail.com",
+        password: "Metal1416"
     },
     youtubeDL:true,
     updateYouTubeDL: true,
@@ -103,5 +105,12 @@ client.login(config.token)
 
 //load dashboard
 client.on('ready', () => {
-    require("./dashboard/index.js")(client);
+  /*
+    client.user.setActivity('you type commands uwu', { type: 'WATCHING' });
+    console.log(`${client.user.username} is fully active.`);
+    let guilds = client.guilds.cache.map(guild => guild.id + ' ' + guild.name) // for discord v11 //let guilds = client.guilds.map(guild => guild.id)
+    console.log(guilds)
+    
+    console.log('test')*/
+    require("./dashboard/index")(client);
 })

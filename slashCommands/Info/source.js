@@ -1,7 +1,7 @@
 const {
   MessageEmbed
 } = require("discord.js");
-const config = require("../../botconfig/config.json");
+const config = require("../../botconfig/config.js");
 var ee = require("../../botconfig/embed.json");
 const settings = require("../../botconfig/settings.json");
 module.exports = {
@@ -35,8 +35,7 @@ module.exports = {
         embeds: [
           new MessageEmbed().setColor(ee.color)
           .setFooter(ee.footertext, ee.footericon)
-          .setDescription(`**WHEN YOU USE THE SOURCE CODE, __GIVE CREDITS__!** :heart:\n\n[Link to Source](https://github.com/Tomato6966/Musicium)\n\n[Youtube Tutorial]()`)
-        ]
+                  ]
       });
     } catch (e) {
       console.log(String(e.stack).bgRed)

@@ -1,5 +1,5 @@
 //here the event starts
-const config = require("../../botconfig/config.json")
+const config = require("../../botconfig/config.js")
 const { change_status } = require("../../handlers/functions");
 module.exports = client => {
   //SETTING ALL GUILD DATA FOR THE DJ ONLY COMMANDS for the DEFAULT

@@ -1,10 +1,10 @@
-console.log(`Welcome to SERVICE HANDLER /--/ By https://milrato.eu /--/ Discord: Tomato#6966`.yellow);
+console.log(`Welcome to SERVICE HANDLER /--/ By https://musicord.live /--/ Discord: Schiz#0122`.yellow);
 const PlayerMap = new Map()
 const Discord = require(`discord.js`);
 const {
     KSoftClient
 } = require('@ksoft/api');
-const config = require(`../botconfig/config.json`);
+const config = require(`../botconfig/config.js`);
 const ksoft = new KSoftClient(config.ksoftapi);
 const ee = require(`../botconfig/embed.json`);
 const {
@@ -64,7 +64,7 @@ module.exports = (client) => {
                 clearInterval(songEditInterval)
               }
             }
-          }, 10000)
+          }, 20000)
 
           collector.on('collect', async i => {
             if(i.customId != `10` && check_if_dj(client, i.member, client.distube.getQueue(i.guild.id).songs[0])) {
@@ -79,7 +79,7 @@ module.exports = (client) => {
             lastEdited = true;
             setTimeout(() => {
               lastEdited = false
-            }, 7000)
+            }, 50000)
             //skip
             if (i.customId == `1`) {
               let { member } = i;
@@ -408,7 +408,7 @@ module.exports = (client) => {
               await ksoft.lyrics.get(newQueue.songs[0].name).then(
                 async track => {
                     if (!track.lyrics) return i.reply({content: `${client.allEmojis.x} **No Lyrics Found!** :cry:`, ephemeral: true});
-                    lyrics = track.lyrics;
+                    let lyrics = track.lyrics;
                 embeds = lyricsEmbed(lyrics, newQueue.songs[0]);
               }).catch(e=>{
                 console.log(e)
@@ -485,6 +485,7 @@ module.exports = (client) => {
       .on(`searchNoResult`, message => message.channel.send(`No result found!`).catch((e)=>console.log(e)))
       .on(`finish`, queue => {
         var data = receiveQueueData(queue, queue.previousSongs[0])
+        if (data){
         data.embeds[0].fields = [];
         data.embeds[0].author.iconURL = "https://cdn.discordapp.com/attachments/883978730261860383/883978741892649000/847032838998196234.png"
         data.embeds[0].footer.text += "\n⛔️ SONG ENDED!";
@@ -496,6 +497,7 @@ module.exports = (client) => {
         }).catch((e) => {
           //console.log(e.stack ? String(e.stack).grey : String(e).grey)
         })
+        }
         queue.textChannel.send({
           embeds: [
             new MessageEmbed().setColor(ee.color).setFooter(ee.footertext, ee.footericon)
@@ -530,7 +532,7 @@ module.exports = (client) => {
     else djs.slice(0, 15).join(", ");
     if(!newTrack) return new MessageEmbed().setColor(ee.wrongcolor).setTitle("NO SONG FOUND?!?!")
     var embed = new MessageEmbed().setColor(ee.color)
-    .setDescription(`See the [Queue on the **DASHBOARD** Live!](http://dashboard.musicium.eu/queue/${newQueue.id})`)
+    .setDescription(`See the [Queue on the **DASHBOARD** Live!](https://musicord-live.glitch.me/${newQueue.id})`)
       .addField(`💡 Requested by:`, `>>> ${newTrack.user}`, true)
       .addField(`⏱ Duration:`, `>>> \`${newQueue.formattedCurrentTime} / ${newTrack.formattedDuration}\``, true)
       .addField(`🌀 Queue:`, `>>> \`${newQueue.songs.length} song(s)\`\n\`${newQueue.formattedDuration}\``, true)
@@ -591,4 +593,3 @@ module.exports = (client) => {
     };
   }
 };
-
