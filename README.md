@@ -6,6 +6,7 @@
 ## Installation Guide
 > [**Github Link**] ()
 <br/>
+```
     - Have **node.js 16.x** installed
     - Run **npm install**
     - add .env with the following parameters:
@@ -14,6 +15,7 @@
         +   SPOTIFY_CLIENT_ID
         +   DISCORD_CLIENT_ID
         +   DISCORD_SECRET
+ ```
 
 
 ***
