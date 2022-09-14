@@ -1,57 +1,57 @@
 {
-  "name": "musicord",
-  "version": "1.0.0",
-  "description": "Self hosted Music bot, cause Fuck youtube",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "nodemon index.js",
-    "start": "node ."
-  },
-  "engines": {
-    "node": "16.x"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/Musicord/MusicordBot.git"
-  },
-  "keywords": [
-    "Music-bot",
-    "music",
-    "discord",
-    "bot"
-  ],
-  "author": "Juandibp",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/Musicord/MusicordBot/issues"
-  },
-  "homepage": "https://github.com/Musicord/MusicordBot#readme",
-  "dependencies": {
-    "@discordjs/builders": "^0.6.0",
-    "@discordjs/opus": "^0.5.3",
-    "@discordjs/voice": "^0.6.0",
-    "@distube/soundcloud": "^0.2.2",
-    "@distube/spotify": "^0.6.3",
-    "@distube/ytdl-core": "^4.9.4",
-    "@ksoft/api": "^3.1.9",
-    "colors": "^1.4.0",
-    "cpu-stat": "^2.0.1",
-    "discord.js": "^13.1.0",
-    "distube": "^3.0.0-beta.37",
-    "dotenv": "^10.0.0",
-    "ejs": "^3.1.6",
-    "enmap": "^5.8.7",
-    "express": "^4.17.1",
-    "express-session": "^1.17.2",
-    "ffmpeg-static": "^4.4.0",
-    "http": "^0.0.1-security",
-    "libsodium-wrappers": "^0.7.9",
-    "memorystore": "^1.6.6",
-    "os": "^0.1.2",
-    "passport": "^0.4.1",
-    "passport-discord": "^0.1.4",
-    "session": "^0.1.0",
-    "url": "^0.11.0"
-  }
+    "name": "musicord",
+    "version": "1.0.0",
+    "description": "Self hosted Music bot, cause Fuck youtube",
+    "main": "index.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "dev": "nodemon index.js",
+        "start": "node ."
+    },
+    "engines": {
+        "node": "16.x"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/Musicord/MusicordBot.git"
+    },
+    "keywords": [
+        "Music-bot",
+        "music",
+        "discord",
+        "bot"
+    ],
+    "author": "Juandibp",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/Musicord/MusicordBot/issues"
+    },
+    "homepage": "https://github.com/Musicord/MusicordBot#readme",
+    "dependencies": {
+        "@discordjs/builders": "^0.6.0",
+        "@discordjs/opus": "^0.5.3",
+        "@discordjs/voice": "^0.6.0",
+        "@distube/soundcloud": "0.2.2",
+        "@distube/spotify": "1.4.2",
+        "@distube/ytdl-core": "^4.11.4",
+        "@ksoft/api": "^3.1.9",
+        "colors": "^1.4.0",
+        "cpu-stat": "^2.0.1",
+        "discord.js": "13.1.0",
+        "distube": "^3.0.0",
+        "dotenv": "^10.0.0",
+        "ejs": "^3.1.6",
+        "enmap": "^5.8.7",
+        "express": "^4.17.1",
+        "express-session": "^1.17.2",
+        "ffmpeg-static": "^4.4.0",
+        "http": "^0.0.1-security",
+        "libsodium-wrappers": "^0.7.9",
+        "memorystore": "^1.6.6",
+        "os": "^0.1.2",
+        "passport": "^0.4.1",
+        "passport-discord": "^0.1.4",
+        "session": "^0.1.0",
+        "url": "^0.11.0"
+    }
 }

@@ -12,6 +12,7 @@ const {
   MessageActionRow,
   MessageEmbed
 } = require(`discord.js`);
+
 const { 
   lyricsEmbed, check_if_dj
 } = require("./functions");
